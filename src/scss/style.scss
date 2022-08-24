@@ -1,0 +1,158 @@
+* { margin: 0;padding: 0; box-sizing: border-box; ::after,::before}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto'; 
+    font-weight: 400;
+    color: #c5aaaa;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    background-color: #fff;
+}
+
+.container {
+    background-color: #e7d5d5;
+    overflow: hidden;
+}
+
+.header{
+    position: relative;
+    min-height: 82.6rem;
+    background: url(../img/ballons.jpg) center / cover no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+    &__logo {
+        position: absolute;
+        width: 5.6rem;
+        height: 7rem;
+        top: 5rem;
+        left: 5rem;
+    }
+
+    &__box {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+    }
+}
+
+.title-first{
+    color: #FFFFFF;
+    &__main{
+        display: block;
+        font-weight: 800;
+        font-size: 5rem;
+        line-height: 6rem;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        animation-name: left-to-righr;
+        animation-duration: 5s;
+        animation-delay: 0.5s;
+        backface-visibility: hidden;
+    }
+    &__seconday {
+        display: block;
+        font-weight: 300;
+        font-size: 4rem;
+        line-height: 4.8rem;
+        letter-spacing: 0.5rem;
+        margin-bottom: 6.5rem;
+        animation-name: righr-to-left;
+        animation-duration: 5s;
+        animation-delay: 0.5s;
+        backface-visibility: hidden;
+    }
+}
+
+.btn {
+    display: inline-block;
+    position: relative;
+    width: 27rem;
+    height: 5.4rem;
+    padding: 1.5rem 2.5rem;
+    border-radius: 10rem;
+    background-color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-family: Roboto;
+    color: #777777;
+    animation-name: btnap;
+    animation-duration: 5s;
+    backface-visibility: hidden;
+
+    &:hover {
+        background-color: red;
+        color: #000;
+        transform: translateY(-2px);
+        &::after{
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+    &:active {
+        background-color: #000;
+        color: red;
+        transform: translateY(2px);
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+        background-color: yellow;
+        z-index: -1;
+        transition: all 5s;
+    }
+}
+
+
+
+
+
+@keyframes left-to-righr{
+    0%{
+        opacity: 0;
+        color: red;
+        transform: translateX(-10rem);
+    }
+    80% {
+        color: yellow;
+        transform: translateX(0.1rem);
+    }
+    100% {
+        opacity: 1;
+        color: #FFFFFF;
+    
+    }}
+
+@keyframes righr-to-left{
+    0%{
+        opacity: 0;
+        color: yellow;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        color: orange;
+        transform: translateX(-0.1rem);
+    }
+
+    100% {
+        opacity: 1;
+        color: #FFFFFF;
+    
+    }}
